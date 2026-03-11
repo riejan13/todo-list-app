@@ -34,4 +34,23 @@ function saveTasks(){
     displayTasks();
 }
 
+function clearTasks(){
+tasks = [];
+saveTasks();
+}
+
+let li = document.createElement("li");
+li.textContent = task;
+
+let deleteBtn = document.createElement("button");
+deleteBtn.textContent = "Delete";
+
+deleteBtn.onclick = function(){
+    tasks.splice(index,1);
+    saveTasks();
+};
+
+li.appendChild(deleteBtn);
+list.appendChild(li);
+
 displayTasks();
